@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EQStore Landing</title>
+</head>
+<body>
+<!-- HTML completo insertado -->
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(135deg, #e0f7fa, #f0f4f8);
+        color: #333;
+        overflow-x: hidden;
+    }
+    header {
+        background-color: #0288d1;
+        color: white;
+        padding: 20px;
+        text-align: center;
+    }
+    header img {
+        height: 80px;
+    }
+    .container {
+        max-width: 1200px;
+        margin: 30px auto;
+        padding: 20px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 20px;
+    }
+    .card {
+        background: white;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+    h2 {
+        color: #0288d1;
+        margin-top: 0;
+    }
+    ul {
+        padding-left: 20px;
+    }
+    li {
+        margin-bottom: 8px;
+    }
+    footer {
+        background-color: #0288d1;
+        color: white;
+        text-align: center;
+        padding: 15px;
+        border-radius: 15px 15px 0 0;
+        margin-top: 40px;
+    }
+    a {
+        color: #0288d1;
+        text-decoration: none;
+    }
+    .discord-button, .ticket-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        background-color: #5865F2;
+        color: white;
+        padding: 15px 25px;
+        border-radius: 10px;
+        font-size: 18px;
+        font-weight: bold;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+        margin-top: 10px;
+    }
+    .ticket-button {
+        background-color: #ffffff;
+        color: #5865F2;
+        border: 2px solid #5865F2;
+    }
+    .discord-button:hover {
+        background-color: #4752c4;
+    }
+    .ticket-button:hover {
+        background-color: #f0f4f8;
+    }
+    .discord-icon {
+        width: 24px;
+        height: 24px;
+    }
+    .floating-discord {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #5865F2;
+        color: white;
+        padding: 15px;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        z-index: 9999;
+        transition: transform 0.3s ease;
+    }
+    .floating-discord:hover {
+        transform: scale(1.1);
+    }
+    .floating-discord img {
+        width: 30px;
+        height: 30px;
+    }
+
+    @media (max-width: 600px) {
+        .container {
+            grid-template-columns: 1fr;
+            padding: 10px;
+        }
+        .card {
+            padding: 15px;
+        }
+        header img {
+            height: 60px;
+        }
+        .discord-button, .ticket-button {
+            font-size: 16px;
+            padding: 12px 18px;
+        }
+        .floating-discord {
+            width: 50px;
+            height: 50px;
+            padding: 10px;
+        }
+        .floating-discord img {
+            width: 24px;
+            height: 24px;
+        }
+    }
+  #parallax-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: url('https://i.imgur.com/bdxgPAw.png');
+    background-repeat: repeat;
+    background-size: cover;
+    opacity: 0.2;
+    z-index: -1;
+    transform: translateZ(0);
+    animation: parallax 30s linear infinite;}
+
+  @keyframes parallax {
+    from { transform: translateY(0); }
+    to { transform: translateY(-100px); }
+  }
+</style>
+
+<header>
+    <img src="https://i.imgur.com/P5OP7Xr.png" alt="EQStore Logo">
+</header>
+
+<div id="parallax-bg"></div>
+
+<div class="container">
+    <div class="card">
+        <h2>¿Quiénes somos?</h2>
+        <p>EQStore apunta a ser una de las mejores tiendas en calidad/precio del mercado...</p>
+    </div>
+    <!-- Más tarjetas aquí... -->
+</div>
+
+<a href="https://discord.gg/dyzrWnjmsJ" class="floating-discord" target="_blank">
+    <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f47e.svg" alt="Discord">
+</a>
+
+<footer>
+    © 2025 EQStore - Todos los derechos reservados
+</footer>
+
+<script>
+  const emojis = ["<img src='https://i.imgur.com/2txRaeI.png' style='width:24px; height:24px;'>"];
+  function createEmoji() {
+    const emoji = document.createElement("div");
+    emoji.classList.add("falling-emoji");
+    emoji.style.left = Math.random() * 100 + "vw";
+    emoji.style.animationDuration = (Math.random() * 2 + 3) + "s";
+    emoji.innerHTML = emojis[Math.floor(Math.random() * emojis.length)];
+    document.body.appendChild(emoji);
+    setTimeout(() => { emoji.remove(); }, 5000);
+  }
+  setInterval(createEmoji, 500);
+</script>
+
+<style>
+  .falling-emoji {
+    position: fixed;
+    top: -2em;
+    width: 24px;
+    height: 24px;
+    z-index: 0;
+    pointer-events: none;
+    animation: fall linear forwards;
+  }
+
+  @keyframes fall {
+    to {
+      transform: translateY(110vh);
+      opacity: 0;
+    }
+  }
+</style>
+</body>
+</html>
